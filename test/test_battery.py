@@ -2,7 +2,7 @@ import unittest
 import battery
 from datetime import datetime
 from battery.nubbin_battery import NubbinBattery
-from battery.spindlerBattery import SpindlerBattery
+from battery.spindler_battery import SpindlerBattery
 
 class TestNubbin(unittest.TestCase):
     def test_battery_should_be_serviced(self):
@@ -21,7 +21,7 @@ class TestNubbin(unittest.TestCase):
 class TestSpindler(unittest.TestCase):
     def test_battery_should_be_serviced(self):
         today = datetime.today().date()
-        last_service_date = self.today.replace(year=today.year - 4)
+        last_service_date = self.today.replace(year=today.year -  4)
         spindler_battery = SpindlerBattery(last_service_date, self.today)
         self.assertTrue(spindler_battery.needs_service())
 
